@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+ul {
+    padding: 0;
+}
+
+/* Header */
+h1, ul {
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+}
+
+header {
+    background: #fff;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto auto;
+    gap: 1rem 2rem;
+}
+
+.logo img {
+    grid-row: span 2;
+    height: 86px;
+}
+
+.logo {
+    float: left;
+    margin-right: 2em;
+}
+
+nav {
+    align-self: end;
+    margin-top: 60px;
+}
+
