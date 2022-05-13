@@ -29,6 +29,11 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/menu', (req, res) => {
+    console.log("Entering menu page");
+    res.render('menu');
+});
+
 app.all('*', (req, res) => {
     console.log("Entering 404 page");
     res.status(404).send("<h1>404</h1>");
