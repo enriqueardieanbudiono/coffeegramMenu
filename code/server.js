@@ -21,7 +21,7 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'coffeegram',
     password: 'coffeegram2022',
-    database: 'coffeegram-menu'
+    database: 'coffeegram'
 });
 
 app.get('/', (req, res) => {
