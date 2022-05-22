@@ -40,7 +40,15 @@ app.post('/menu', urlecondedParser, (req, res) => {
     const americano = req.body.americano;
     const cappuccino = req.body.cappuccino;
     const latte = req.body.latte;
-    res.redirect('menu');
+
+    const order = `INSERT INTO menu (tablenum, espresso, americano_longblack, cappuccino, latte) 
+    VALUES ('${tablenum}', '${espresso}', '${americano}', '${cappuccino}', '${latte}')`;
+
+    connection.query(order, (err, result) => {
+        if(err) throw err;
+        console.log(`Table ${tablenum} has been ordered`);
+        res.redirect('menu');
+    });
 });
 
 app.get('/aero', (req, res) => {
