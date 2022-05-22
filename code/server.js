@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/admin', (req, res) => {
+    res.render('admin');
+});
+
 app.get('/menu', (req, res) => {
     res.render('menu');
 });
