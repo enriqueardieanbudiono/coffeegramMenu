@@ -34,6 +34,13 @@ app.get('/menu', (req, res) => {
 
 app.post('/menu', urlecondedParser, (req, res) => {
     if(!req.body) return res.sendStatus(400);
+
+    const tablenum = req.body.tablenum;
+    const espresso = req.body.espresso;
+    const americano = req.body.americano;
+    const cappuccino = req.body.cappuccino;
+    const latte = req.body.latte;
+    res.redirect('menu');
 });
 
 app.get('/aero', (req, res) => {
@@ -44,9 +51,9 @@ app.get('/coffeegrambtm', (req, res) => {
     res.render('coffeegrambtm');
 });
 
-/*app.all('*', (req, res) => {
+app.all('*', (req, res) => {
     res.status(404).send("<h1>404</h1>");
-}); */
+});
 
 app.listen(PORT,() => {
     console.log(`Server is running on port ${PORT}`);
